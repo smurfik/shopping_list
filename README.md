@@ -16,7 +16,7 @@ Create a javascript application where one can create and manage shopping list it
   - A separate "DELETE" button appears when clicked the item is completely removed from the list (think of the second button as a confirmation)
 
 
-### Extended Requirments
+### Extended Requirements
 
 - Add a due date to the list items, the list should be ordered by the due date
 - Add a "Edit" button when clicked shows form inputs for name, due date, complete, and a submit button. When clicked the values are updated.
