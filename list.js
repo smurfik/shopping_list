@@ -3,23 +3,36 @@ window.onload = function () {
   var addBtn = document.getElementById("add"),
       input = document.getElementById("input"),
       list = document.createElement('ul'),
-      li, content;
+      li, content, checkbox;
 
   document.body.insertBefore(list, null);
 
-  var addElement = function (value) {
+  var addLi = function (value) {
     li = document.createElement('li');
     content = document.createTextNode(value);
     li.appendChild(content);
     list.appendChild(li);
   };
 
+  var addCheckbox = function () {
+    checkbox = document.createElement('button');
+    content = document.createTextNode('complete');
+    checkbox.appendChild(content);
+    li.insertBefore(checkbox, null);
+
+    checkbox.addEventListener("click", function(event) {
+      event.preventDefault();
+      this.parentNode.style.color = "#D3D3D3";
+      this.parentNode.parentNode.appendChild(this.parentNode);
+    });
+  };
+
   addBtn.addEventListener("click", function(event) {
     event.preventDefault();
     if (input.value !== "") {
-      addElement(input.value);
+      addLi(input.value);
+      addCheckbox();
       input.value = "";
     }
   });
 };
-
