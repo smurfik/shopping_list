@@ -11,7 +11,7 @@ window.onload = function () {
     li = document.createElement('li');
     content = document.createTextNode(value);
     li.appendChild(content);
-    list.appendChild(li);
+    list.insertBefore(li, list.firstChild);
   };
 
   var addCheckbox = function () {
