@@ -9,7 +9,7 @@ window.onload = function () {
 
   var addLi = function (value) {
     li = document.createElement('li');
-    content = document.createTextNode(value);
+    content = document.createTextNode(value + " ");
     li.appendChild(content);
     list.insertBefore(li, list.firstChild);
   };
