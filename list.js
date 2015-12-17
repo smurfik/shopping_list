@@ -24,6 +24,7 @@ window.onload = function () {
       event.preventDefault();
       this.parentNode.style.color = "#D3D3D3";
       this.parentNode.parentNode.appendChild(this.parentNode);
+      this.parentNode.removeChild(this);
     });
   };
 
