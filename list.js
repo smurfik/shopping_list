@@ -3,7 +3,7 @@ window.onload = function () {
   var addBtn = document.getElementById("add"),
       input = document.getElementById("input"),
       list = document.createElement('ul'),
-      li, content, checkbox;
+      li, content, checkbox, x, remove;
 
   document.body.insertBefore(list, null);
 
@@ -28,11 +28,35 @@ window.onload = function () {
     });
   };
 
+  var addX = function () {
+    x = document.createElement('button');
+    content = document.createTextNode('X');
+    x.appendChild(content);
+    li.insertBefore(x, null);
+
+    x.addEventListener("click", function(event) {
+      event.preventDefault();
+      li = this.parentNode;
+      li.removeChild(this);
+      remove = document.createElement('button');
+      content = document.createTextNode('Remove');
+      remove.appendChild(content);
+      li.insertBefore(remove, null);
+
+      remove.addEventListener("click", function(event) {
+        event.preventDefault();
+        li = this.parentNode;
+        li.parentNode.removeChild(li);
+      });
+    });
+  };
+
   addBtn.addEventListener("click", function(event) {
     event.preventDefault();
     if (input.value !== "") {
       addLi(input.value);
       addCheckbox();
+      addX();
       input.value = "";
     }
   });
