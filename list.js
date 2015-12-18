@@ -4,7 +4,7 @@ window.onload = function () {
       input = document.getElementById("input"),
       list = document.createElement('ul'),
       container = document.getElementsByClassName("container"),
-      li, content, checkbox, x, remove;
+      li, content, checkbox, x, remove, check;
 
   container[0].appendChild(list);
 
@@ -29,6 +29,22 @@ window.onload = function () {
       this.parentNode.parentNode.appendChild(this.parentNode);
       this.parentNode.removeChild(this);
     });
+  };
+
+  var addCheck = function() {
+    check = document.createElement('input');
+    check.type = "checkbox";
+
+    li.insertBefore(check, li.firstChild);
+
+    check.addEventListener("click", function(event) {
+      event.preventDefault();
+      this.parentNode.style.color = "#D3D3D3";
+      this.parentNode.style.setProperty("text-decoration", "line-through");
+      this.parentNode.parentNode.appendChild(this.parentNode);
+      this.parentNode.removeChild(this);
+    });
+
   };
 
   var addX = function () {
@@ -60,7 +76,7 @@ window.onload = function () {
     event.preventDefault();
     if (input.value !== "") {
       addLi(input.value);
-      addCheckbox();
+      addCheck();
       addX();
       input.value = "";
     }
