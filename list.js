@@ -23,6 +23,7 @@ window.onload = function () {
     checkbox.addEventListener("click", function(event) {
       event.preventDefault();
       this.parentNode.style.color = "#D3D3D3";
+      this.parentNode.style.setProperty("text-decoration", "line-through");
       this.parentNode.parentNode.appendChild(this.parentNode);
       this.parentNode.removeChild(this);
     });
