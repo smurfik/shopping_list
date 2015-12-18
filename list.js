@@ -3,9 +3,10 @@ window.onload = function () {
   var addBtn = document.getElementById("add"),
       input = document.getElementById("input"),
       list = document.createElement('ul'),
+      container = document.getElementsByClassName("container"),
       li, content, checkbox, x, remove;
 
-  document.body.insertBefore(list, null);
+  container[0].appendChild(list);
 
   var addLi = function (value) {
     li = document.createElement('li');
@@ -19,6 +20,7 @@ window.onload = function () {
     content = document.createTextNode('complete');
     checkbox.appendChild(content);
     li.insertBefore(checkbox, null);
+    checkbox.className = "btn";
 
     checkbox.addEventListener("click", function(event) {
       event.preventDefault();
