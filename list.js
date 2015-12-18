@@ -17,10 +17,10 @@ window.onload = function () {
 
   var addCheckbox = function () {
     checkbox = document.createElement('button');
-    content = document.createTextNode('complete');
+    content = document.createTextNode('v');
     checkbox.appendChild(content);
     li.insertBefore(checkbox, null);
-    checkbox.className = "btn";
+    checkbox.className = "btn btn-success";
 
     checkbox.addEventListener("click", function(event) {
       event.preventDefault();
@@ -36,6 +36,7 @@ window.onload = function () {
     content = document.createTextNode('X');
     x.appendChild(content);
     li.insertBefore(x, null);
+    x.className = "btn";
 
     x.addEventListener("click", function(event) {
       event.preventDefault();
@@ -45,6 +46,7 @@ window.onload = function () {
       content = document.createTextNode('Remove');
       remove.appendChild(content);
       li.insertBefore(remove, null);
+      remove.className = "btn btn-danger"
 
       remove.addEventListener("click", function(event) {
         event.preventDefault();
